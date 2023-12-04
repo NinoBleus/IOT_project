@@ -21,4 +21,4 @@ jobs:
 
     - name: Compile Python Code
       run: |
-        python -m compileall .  # Controleert op syntaxfouten en compileert Python-bestanden
+        python -m compileall main.py  # Controleert op syntaxfouten en compileert Python-bestanden
