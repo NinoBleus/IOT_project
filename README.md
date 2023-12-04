@@ -1,10 +1,3 @@
-# IOT_project
-
-
-Certainly! Below is a formatted version of the provided information using Markdown:
-
----
-
 # IoT Project Guidelines
 
 ## Objective
