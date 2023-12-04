@@ -1,0 +1,25 @@
+name: Python Compile Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x  # Kies de Python-versie die je wilt gebruiken
+
+    - name: Compile Python Code
+      run: |
+        python -m compileall .  # Controleert op syntaxfouten en compileert Python-bestanden
