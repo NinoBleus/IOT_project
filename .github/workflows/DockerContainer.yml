@@ -28,6 +28,18 @@ jobs:
     - name: Build Docker image
       run: |
         docker buildx build --platform linux/amd64,linux/arm64 -t docker.io/mandkf/iot_project:latest .
+        
+        # Create or update the 'docker' directory in the main branch
+        mkdir -p docker
+        mv ./*.tar.gz docker/
+
+    - name: Save Docker image in Git repository
+      run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git add docker/*
+        git commit -m "Add Docker image"
+        git push
 
     - name: Log in to Docker
       uses: docker/login-action@v1
