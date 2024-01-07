@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Installeer de vereiste Python-pakketten
-RUN pip install -r requirements.txt  # Als je een requirements.txt hebt, anders weglaten
+RUN pip install -r requirements.txt  
 
 # Voer het Python-script uit wanneer de container wordt gestart
 CMD ["python", "main.py"]
