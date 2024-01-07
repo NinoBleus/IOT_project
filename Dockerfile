@@ -1,11 +1,11 @@
 # Gebruik de officiële Python-image van Docker als basis
-FROM python:3.8
+FROM python:3
 
 # Stel de werkdirectory in binnen de container
 WORKDIR /usr/src/app
 
 # Kopieer de inhoud van de huidige map naar de container in de werkdirectory
-COPY . .
+COPY . ./
 
 # Installeer de vereiste Python-pakketten
 RUN pip install --no-cache-dir -r requirements.txt  
