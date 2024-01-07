@@ -31,8 +31,8 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: docker.io
-        username: mandkf
-        password: ${{ secrets.DOCKER_PAT }}
+        username: ${{ secrets.DOCKER_UserName }}
+        password: ${{ secrets.DOCKER_Paswoord }}
 
     - name: Push Docker image to Docker Hub
       run: docker push iot_project:latest
