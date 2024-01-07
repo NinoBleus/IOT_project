@@ -11,4 +11,4 @@ COPY . ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Voer het Python-script uit wanneer de container wordt gestart
-CMD ["python", "main.py"]
+CMD ["python", "-u", "main.py"]
