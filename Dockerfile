@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY . ./
 
 # Installeer de vereiste Python-pakketten
-RUN pip install --no-cache-dir -r requirements.txt  
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Voer het Python-script uit wanneer de container wordt gestart
 CMD ["python", "main.py"]
