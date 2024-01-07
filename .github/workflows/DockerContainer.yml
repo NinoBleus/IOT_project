@@ -20,17 +20,13 @@ jobs:
       uses: docker/setup-qemu-action@v2
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      run: docker buildx create --use
 
     - name: Wait for Docker Buildx to be ready
-      uses: docker/wait-action@v2
-      with:
-        services: buildx
+      run: docker buildx inspect --bootstrap
 
     - name: Build Docker image
       run: |
-        docker buildx create --use
-        docker buildx inspect --bootstrap
         docker buildx build --platform linux/amd64,linux/arm64 -t docker.io/mandkf/iot_project:latest .
 
     - name: Log in to Docker
