@@ -35,4 +35,4 @@ jobs:
         password: ${{ secrets.DOCKER_Paswoord }}
 
     - name: Push Docker image to Docker Hub
-      run: docker push iot_project:latest
+      run: docker push docker.io/mandkf/iot_project:latest
