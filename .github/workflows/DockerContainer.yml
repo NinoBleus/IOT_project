@@ -27,11 +27,9 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker buildx build --platform linux/amd64,linux/arm64 -t docker.io/mandkf/iot_project:latest .
-        
-        # Create or update the 'docker' directory in the main branch
+        DOCKER_TARBALL=$(docker buildx build --output type=tar --platform linux/amd64,linux/arm64 -t docker.io/mandkf/iot_project:latest .)
         mkdir -p docker
-        mv ./*.tar.gz docker/
+        mv "$DOCKER_TARBALL" docker/
 
     - name: Save Docker image in Git repository
       run: |
